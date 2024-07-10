@@ -1,0 +1,457 @@
+:root{
+    --background-color: rgb(40,68,38);
+    --text1: rgba(255, 255, 255, 0.644);
+    --text2: rgb(92, 91, 91);
+    --btn: rgb(69,99,68);
+    --btnhover: rgb(56,91,74);
+    --input: rgb(245,245,245);
+    --contactpagebgcolor: rgb(236,236,236);
+
+}
+
+
+*{
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.5;
+
+
+}
+/* *****footer***** */
+.footer {
+    background-color: #e0e0e0;
+    /* padding: 40px 0; */
+    color: #333;
+
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* margin: 2rem; */
+    /* padding: 2rem; */
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 1rem 2rem;
+}
+
+#footer-section{
+    text-align: center;
+
+}
+.footer-section h2,
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+}
+
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.subscribe-input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.subscribe-button {
+    padding: 10px;
+    background-color: var(--btn);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.subscribe-button:hover {
+    background-color: var(--btnhover);
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-socials a:hover {
+    color: #555;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #d0d0d0;
+    /* margin-top: 20px; */
+}
+
+.footer-bottom-links a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-bottom-links a:hover {
+    text-decoration: underline;
+}
+
+/* **************************header**************************** */
+
+.header{
+    display: flex;
+    justify-content: space-around; /*Horizontal Position*/
+    align-items: center; /*Vertical position*/
+    padding: 20px;
+    height: 6vh;
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+    background-color: var(--background-color);
+}
+
+
+nav ul, .auth ul{
+    display: flex;
+}
+
+nav ul li, .auth ul li{
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin: 10px;
+}
+
+nav ul li a, .auth ul li a{
+    text-decoration: none;
+    color: var(--text1);
+    padding: 20px 10px;
+
+}
+
+nav ul li a:hover{
+    border-bottom: 2px solid var(--text1);
+}
+
+#login{
+    border: 1px solid var(--background-color);
+    border-radius: 25px;
+    padding: 10px;
+}
+
+#signup{
+    background-color: var(--btn);
+    border-radius: 25px;
+    border: 1px solid var(--btn);
+    padding: 10px;
+
+}
+
+#login:hover, #signup:hover{
+    background-color: var(--btnhover);
+    border: 1px solid var(--btnhover) ;
+}
+
+
+/* Hide the checkbox */
+.nav-toggle {
+    display: none;
+}
+
+/* Hamburger menu styling */
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    background-color: #333; /* Add background color */
+    padding: 10px;
+    border-radius: 5px; /* Optional: rounded corners */
+}
+
+.nav-toggle-label span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: white; /* Ensure the lines are visible against the background */
+    margin: 4px 0;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #333;
+        justify-content: center;
+        display: none;
+    }
+
+    .nav ul li {
+        margin: 20px 0;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label + .nav ul {
+        display: flex;
+    }
+
+    .nav-toggle-label {
+        display: flex;
+    }
+
+    .auth {
+        display: none; /* Hide auth section or you can style it similarly */
+    }
+}
+
+
+/* ******************************Homepage******************************** */
+
+.hero, 
+.abthero,
+.contacthero {
+    position: relative; /* Ensure positioning context for the pseudo-element */
+    background-image: url('images/img4.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed; /* Make the background image fixed */
+    height: 80vh; 
+    color: var(--text1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Hide overflow for pseudo-element */
+}
+
+.hero::before, 
+.abthero::before,
+.contacthero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1; /* Place the overlay behind the text */
+}
+
+.herotext,
+.abtherotext
+.contactherotext {
+    position: relative; /* Ensure text is above the overlay */
+    z-index: 2; /* Place the text above the overlay */
+}
+
+.herotext h2{
+    font-size: 4rem;
+    font-weight: 100;
+    letter-spacing: 0.05rem;
+}
+
+.herotext p{
+    font-size: 1.1rem;
+    font-weight: 100;
+    letter-spacing: 0.05rem;
+}
+
+.herodivs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Ensure text is above the overlay */
+    z-index: 2; /* Place the text above the overlay */
+    margin-top: -15vh;
+}
+
+.herodivs div{
+    padding: 80px;
+    color: var(--text1);
+    background-color: var(--btn);
+}
+
+.herodivs div:nth-child(2){
+    background-color: var(--background-color);
+}
+
+.herodivs div:nth-child(3){
+    background-color: var(--btnhover);
+}
+
+.herodivs h2, 
+.abtherotext h2{
+    font-size: 1.5rem;
+    font-weight: 100;
+    letter-spacing: 0.05rem;
+    color: var(--text1);
+    
+}
+
+.herodivs p, 
+.abtherotext p{
+    font-size: 1rem;
+    font-weight: 100;
+    letter-spacing: 0.05rem;
+    color: var(--text1);
+}
+
+.hero2{
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero2 h2, 
+.testimonials h2,
+.abt h2,
+.contacthero h2 {
+    font-size: 2rem;
+    font-weight: 100;
+    letter-spacing: 0.05rem;
+    color: var(--text2);
+}
+
+.hero2 p, 
+.testimonials p,
+.abt p{
+    font-size: 1rem;
+    font-weight: 100;
+    letter-spacing: 0.05rem;
+    color: var(--text2);
+    margin-bottom: 1rem;
+}
+
+.testimonials,
+.abt{
+    text-align: center;
+    margin: 2rem;
+
+}
+
+.testimonials div, 
+.facilities > div{
+    display: flex;
+    align-items: center;
+}
+
+.testimonials > div > div,
+.facilities > div > div {
+    background-color: rgb(245,245,245);
+    padding: 4rem;
+
+}
+
+.testimonials div img{
+    border-radius: 50%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.reviews,
+.amenities{
+    flex-direction: column;
+    margin: 2rem;
+    height: 22rem;
+}
+
+.location {
+    margin-bottom: -5px;
+}
+
+
+/* ****************************About Us********************************* */
+.abthero,
+.contacthero {
+   height: 30vh;
+}
+
+.contactform {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 10px;
+    /* border: 1px solid #ddd; */
+    border-radius: 10px;
+
+}
+
+.contactform label {
+    display: block;
+    /* font-weight: bold; */
+}
+
+.contactform input[type="text"],
+.contactform input[type="email"],
+.contactform textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--input);
+    /* box-shadow: 1px 1px 5px 2px  rgba(0, 0, 0, 0.075) inset; */
+
+}
+
+.contactform textarea {
+    height: 120px; /* Adjust as needed */
+    resize: vertical; /* Allows the user to resize the textarea vertically */
+}
+
+.contactform input[type="submit"] {
+    background-color: var(--btn);
+    color: white ;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+.contactform input[type="submit"]:hover {
+    background-color: var(--btnhover);
+
+}
+
+#contact-page{
+    background-color: var(--contactpagebgcolor) ;
+}
